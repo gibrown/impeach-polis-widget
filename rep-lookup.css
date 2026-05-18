@@ -227,13 +227,13 @@
 
 .rl-table {
   width: 100%;
-  min-width: 670px;
+  min-width: 695px;
   border-collapse: collapse;
   font-size: 13px;
   table-layout: fixed;
 }
 
-.rl-table th:nth-child(1), .rl-table td:nth-child(1) { width: 90px;  }  /* Stance */
+.rl-table th:nth-child(1), .rl-table td:nth-child(1) { width: 115px; }  /* Stance */
 .rl-table th:nth-child(2), .rl-table td:nth-child(2) { width: 140px; }  /* Name */
 .rl-table th:nth-child(3), .rl-table td:nth-child(3) { width: 150px; }  /* Elected Office */
 .rl-table th:nth-child(4), .rl-table td:nth-child(4) { width: 115px; }  /* Phone */
