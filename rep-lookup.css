@@ -227,19 +227,17 @@
 
 .rl-table {
   width: 100%;
-  min-width: 420px;
+  min-width: 670px;
   border-collapse: collapse;
   font-size: 13px;
   table-layout: fixed;
 }
 
-/* Explicit % widths on every column — lets overflow:hidden+ellipsis work
-   without the max-width:0 hack, which confuses browser layout engines */
-.rl-table th:nth-child(1), .rl-table td:nth-child(1) { width: 14%; }  /* Stance */
-.rl-table th:nth-child(2), .rl-table td:nth-child(2) { width: 22%; }  /* Name */
-.rl-table th:nth-child(3), .rl-table td:nth-child(3) { width: 23%; }  /* Elected Office */
-.rl-table th:nth-child(4), .rl-table td:nth-child(4) { width: 17%; }  /* Phone */
-.rl-table th:nth-child(5), .rl-table td:nth-child(5) { width: 24%; }  /* Email */
+.rl-table th:nth-child(1), .rl-table td:nth-child(1) { width: 90px;  }  /* Stance */
+.rl-table th:nth-child(2), .rl-table td:nth-child(2) { width: 140px; }  /* Name */
+.rl-table th:nth-child(3), .rl-table td:nth-child(3) { width: 150px; }  /* Elected Office */
+.rl-table th:nth-child(4), .rl-table td:nth-child(4) { width: 115px; }  /* Phone */
+.rl-table th:nth-child(5), .rl-table td:nth-child(5) { width: 175px; }  /* Email */
 
 .rl-table th {
   position: sticky;
