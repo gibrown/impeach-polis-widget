@@ -29,6 +29,9 @@
 }
 
 .rl-address-input::placeholder { color: #999; }
+/* Override WordPress theme and browser autofill color */
+.rl-address-input:-webkit-autofill { -webkit-text-fill-color: #111; }
+#rep-lookup-widget .rl-address-input { color: #111 !important; }
 .rl-address-input:focus { outline: none; border-color: #c0392b; }
 
 .rl-btn {
