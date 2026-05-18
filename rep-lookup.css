@@ -219,12 +219,15 @@
 .rl-table-wrapper {
   max-height: 340px;
   overflow-y: auto;
+  overflow-x: auto;
   border-radius: 8px;
   border: 1px solid #333;
+  -webkit-overflow-scrolling: touch;
 }
 
 .rl-table {
   width: 100%;
+  min-width: 420px;
   border-collapse: collapse;
   font-size: 13px;
   table-layout: fixed;
