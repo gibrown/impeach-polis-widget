@@ -1,0 +1,220 @@
+/* Rep Lookup Widget — impeachpolis.org */
+#rep-lookup-widget {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  max-width: 540px;
+  margin: 0 auto;
+  color: #f0f0f0;
+}
+
+/* ── Search section ── */
+.rl-search {
+  margin-bottom: 20px;
+}
+
+.rl-address-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.rl-address-input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #2a2a3e;
+  color: #f0f0f0;
+  font-size: 16px; /* 16px prevents iOS zoom on focus */
+}
+
+.rl-address-input::placeholder { color: #888; }
+.rl-address-input:focus { outline: none; border-color: #c0392b; }
+
+.rl-btn {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.rl-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.rl-btn-search { background: #c0392b; color: white; }
+.rl-btn-location { background: #27ae60; color: white; width: 100%; padding: 11px; }
+
+.rl-divider {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  margin: 8px 0;
+}
+
+.rl-error {
+  background: #3e1a1a;
+  border: 1px solid #c0392b;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #f5a0a0;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.rl-spinner {
+  text-align: center;
+  padding: 30px;
+  color: #888;
+  font-size: 14px;
+}
+
+/* ── Cards ── */
+.rl-results { margin-bottom: 32px; }
+
+.rl-card {
+  background: #1e1e2e;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 16px;
+  border: 2px solid #333;
+}
+.rl-card.stance-supportive { border-color: #27ae60; }
+.rl-card.stance-maybe      { border-color: #5dade2; }
+.rl-card.stance-opposed    { border-color: #c0392b; }
+
+.rl-card-role {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 4px;
+}
+.rl-card-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-bottom: 2px;
+}
+.rl-card-district {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+/* ── Stance badges ── */
+.rl-stances { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.rl-badge {
+  display: inline-block;
+  padding: 5px 13px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.rl-badge.secondary { padding: 3px 10px; font-size: 11px; opacity: 0.9; }
+.rl-badge.s-supportive { background: #27ae60; color: white; }
+.rl-badge.s-maybe      { background: #5dade2; color: white; }
+.rl-badge.s-opposed    { background: #c0392b; color: white; }
+.rl-badge.s-unknown,
+.rl-badge.s-contacted  { background: #555; color: #eee; }
+.rl-badge.s-election   { background: #7d6608; color: #ffd; }
+
+/* ── Contact buttons ── */
+.rl-contact { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.rl-contact a {
+  display: inline-block;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid #3a3a5e;
+  background: #2a2a3e;
+  transition: opacity 0.15s;
+}
+.rl-contact a:hover { opacity: 0.8; }
+.rl-contact a.phone { color: #7ec8e3; }
+.rl-contact a.email { color: #a8e6a3; }
+.rl-contact a.web   { color: #c9a8e6; font-size: 12px; padding: 7px 12px; }
+
+/* ── Quote ── */
+.rl-quote {
+  border-left: 3px solid #555;
+  padding: 7px 12px;
+  margin: 10px 0;
+  font-style: italic;
+  font-size: 14px;
+  color: #bbb;
+  background: #2a2a3e;
+  border-radius: 0 6px 6px 0;
+}
+.rl-quote.q-supportive { border-left-color: #27ae60; }
+.rl-quote.q-maybe      { border-left-color: #5dade2; }
+.rl-quote.q-opposed    { border-left-color: #c0392b; }
+.rl-quote a { color: #7ec8e3; font-size: 11px; display: block; margin-top: 4px; font-style: normal; text-decoration: none; }
+.rl-quote a:hover { text-decoration: underline; }
+
+/* ── Notes ── */
+.rl-maybe-note   { font-size: 12px; color: #5dade2; margin: -4px 0 8px; }
+.rl-outreach-note { font-size: 12px; color: #e67e22; margin-bottom: 10px; }
+
+/* ── Challengers ── */
+.rl-challengers { margin-top: 14px; border-top: 1px solid #333; padding-top: 12px; }
+.rl-challengers-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 10px;
+}
+.rl-challenger {
+  background: #2a2a3e;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+}
+.rl-challenger.supporting { border-color: #27ae60; background: #1a2e1a; }
+.rl-challenger.maybe-supporting { border-color: #5dade2; background: #1a2535; }
+.rl-challenger-banner {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.banner-supportive { background: linear-gradient(90deg, #1a2e1a, #27ae60); color: white; }
+.banner-maybe      { background: linear-gradient(90deg, #1a2535, #2980b9); color: white; }
+.rl-challenger-name { font-size: 15px; font-weight: 700; color: #f0f0f0; margin-bottom: 6px; }
+
+/* ── Full CTA Table ── */
+.rl-table-section { margin-top: 32px; }
+.rl-table-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin-bottom: 4px;
+}
+.rl-table-subtitle { font-size: 13px; color: #888; margin-bottom: 14px; }
+.rl-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.rl-table th {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 2px solid #333;
+  color: #888;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.rl-table td { padding: 9px 10px; border-bottom: 1px solid #252535; vertical-align: middle; }
+.rl-table tr:hover td { background: #252535; }
+.rl-table td a { color: inherit; text-decoration: none; }
+.rl-table td a:hover { text-decoration: underline; }
+.rl-table .phone-cell a { color: #7ec8e3; }
+.rl-table .email-cell a { color: #a8e6a3; }
+.rl-table .stance-cell .rl-badge { font-size: 11px; padding: 2px 8px; }
+
+@media (max-width: 480px) {
+  .rl-table th.hide-mobile,
+  .rl-table td.hide-mobile { display: none; }
+}
