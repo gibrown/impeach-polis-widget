@@ -82,6 +82,7 @@
 .rl-card.stance-supportive { border-color: #27ae60; }
 .rl-card.stance-maybe      { border-color: #5dade2; }
 .rl-card.stance-opposed    { border-color: #c0392b; }
+.rl-card.rl-card-loading .rl-spinner { padding: 8px; font-size: 13px; }
 
 .rl-card-role {
   font-size: 11px;
@@ -189,29 +190,93 @@
 
 /* ── Full CTA Table ── */
 .rl-table-section { margin-top: 32px; }
-.rl-table-title {
+
+.rl-table-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #333;
+  padding: 0 0 10px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  text-align: left;
   font-size: 16px;
   font-weight: 700;
   color: #f0f0f0;
-  margin-bottom: 4px;
+  font-family: inherit;
 }
+.rl-table-toggle:hover { color: #c0c0d8; }
+.rl-table-toggle .rl-sort-arrow { font-size: 11px; }
+
+.rl-table-section.collapsed .rl-drawer-body { display: none; }
+.rl-table-section.collapsed .rl-table-toggle { border-bottom: none; margin-bottom: 0; }
+
 .rl-table-subtitle { font-size: 13px; color: #888; margin-bottom: 14px; }
-.rl-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+
+.rl-table-wrapper {
+  max-height: 340px;
+  overflow-y: auto;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.rl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed;
+}
+
+/* Explicit % widths on every column — lets overflow:hidden+ellipsis work
+   without the max-width:0 hack, which confuses browser layout engines */
+.rl-table th:nth-child(1), .rl-table td:nth-child(1) { width: 14%; }  /* Stance */
+.rl-table th:nth-child(2), .rl-table td:nth-child(2) { width: 22%; }  /* Name */
+.rl-table th:nth-child(3), .rl-table td:nth-child(3) { width: 23%; }  /* Elected Office */
+.rl-table th:nth-child(4), .rl-table td:nth-child(4) { width: 17%; }  /* Phone */
+.rl-table th:nth-child(5), .rl-table td:nth-child(5) { width: 24%; }  /* Email */
+
 .rl-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #1a1a2e;
   text-align: left;
   padding: 8px 10px;
-  border-bottom: 2px solid #333;
   color: #888;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  box-shadow: 0 2px 0 #333;
+  white-space: normal;
 }
-.rl-table td { padding: 9px 10px; border-bottom: 1px solid #252535; vertical-align: middle; }
+.rl-th-sort { cursor: pointer; user-select: none; }
+.rl-th-sort:hover { color: #c0c0d8; }
+.rl-sort-arrow { color: #c0392b; }
+
+.rl-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #252535;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Name and Elected Office columns wrap instead of truncating */
+.rl-table td:nth-child(2),
+.rl-table td:nth-child(3) {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
 .rl-table tr:hover td { background: #252535; }
 .rl-table td a { color: inherit; text-decoration: none; }
 .rl-table td a:hover { text-decoration: underline; }
 .rl-table .phone-cell a { color: #7ec8e3; }
 .rl-table .email-cell a { color: #a8e6a3; }
+.rl-table .stance-cell { overflow: visible; }
 .rl-table .stance-cell .rl-badge { font-size: 11px; padding: 2px 8px; }
 
 @media (max-width: 480px) {
