@@ -23,12 +23,12 @@
   padding: 12px 14px;
   border-radius: 8px;
   border: 1px solid #444;
-  background: #2a2a3e;
-  color: #f0f0f0;
+  background: #fff;
+  color: #111;
   font-size: 16px; /* 16px prevents iOS zoom on focus */
 }
 
-.rl-address-input::placeholder { color: #888; }
+.rl-address-input::placeholder { color: #999; }
 .rl-address-input:focus { outline: none; border-color: #c0392b; }
 
 .rl-btn {
@@ -282,7 +282,3 @@
 .rl-table .stance-cell { overflow: visible; }
 .rl-table .stance-cell .rl-badge { font-size: 11px; padding: 2px 8px; }
 
-@media (max-width: 480px) {
-  .rl-table th.hide-mobile,
-  .rl-table td.hide-mobile { display: none; }
-}
