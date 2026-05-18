@@ -21,3 +21,5 @@ Add a Custom HTML block to the Make the Call page:
 ## Updating
 
 Data is updated by running `bash scripts/deploy_widget.sh` in the private impeach-polis repo.
+=======
+Lookup widget for impeachpolis.org. Compiled code only.
